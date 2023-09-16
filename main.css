@@ -1,0 +1,77 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+section{
+    width: 550px;
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    padding-top: 50px;
+    padding-left: 50px;
+}
+main{
+    display: flex;
+    width: 450px;
+    margin-left: 0px;
+    transition: .5s ease;
+}
+section::after{
+    content: '';
+    position: absolute;
+    z-index: -1;
+    inset: -50px;
+    width: calc(100% + 100px);
+    height: calc(100% + 100px);
+    background-color: red;
+}
+section.red::after{
+    background-color: red;
+}
+section.blue::after{
+    background-color: blue;
+}
+section.green::after{
+    background-color: green;
+}
+section.black::after{
+    background-color: black;
+}
+.slide{
+    min-width: 450px;
+}
+
+.dots{
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+.dots div{
+    width: 20px;
+    height: 20px;
+    border: 4px solid #fff;
+    border-radius: 50%;
+    transition: .5s ease;
+    cursor: pointer;
+}
+.dots div:hover, .dots div.active{
+    background-color: #fff;
+}
